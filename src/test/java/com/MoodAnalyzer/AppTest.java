@@ -25,4 +25,10 @@ public class AppTest
         assertEquals("Happy", userObject.analyseMood());
     }
 
+	@Test
+    public void CheckMoodForNull() {
+		MoodAnalyzer userObject = new MoodAnalyzer(null);
+        assertEquals("Happy", userObject.analyseMood());
+    }
+
 }

@@ -11,9 +11,13 @@ public class MoodAnalyzer {
 	}
 
 	public String analyseMood() {
-		if (message.equalsIgnoreCase("I am in Sad mood")) {
-			return "Sad";
-		} else {
+		try {
+			if (message.equalsIgnoreCase("I am in Sad mood")) {
+				return "Sad";
+			} else {
+				return "Happy";
+			}
+		} catch (Exception ex) {
 			return "Happy";
 		}
 	}

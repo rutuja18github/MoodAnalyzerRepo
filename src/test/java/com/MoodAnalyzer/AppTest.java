@@ -16,7 +16,7 @@ public class AppTest
 	@Test
     public void CheckHappyMood() {
 		MoodAnalyzer userObject = new MoodAnalyzer();
-        assertEquals("Happy", userObject.analyseMood("I am in Happy mood"));
+        assertEquals("Sad", userObject.analyseMood("I am in Happy sad"));
     }
 	
 	@Test

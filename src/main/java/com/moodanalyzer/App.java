@@ -14,6 +14,9 @@ public class App
     public static void main( String[] args )
     {
         System.out.println( "welcome to Mood Analyser!" );
-       
+        MoodAnalyzer moodAnalyzerObject = new MoodAnalyzer();
+        String message="I am in Happy mood";
+        String mood=moodAnalyzerObject.analyseMood(message);
+        logger.info("I am "+mood);
     }
 }

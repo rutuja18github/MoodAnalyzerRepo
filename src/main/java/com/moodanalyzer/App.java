@@ -14,12 +14,15 @@ public class App
     public static void main( String[] args )
     {
         System.out.println( "welcome to Mood Analyser!" );
-        MoodAnalyzer moodAnalyzerObject = new MoodAnalyzer("");
-        try {
-        String mood=moodAnalyzerObject.analyseMood();
-        logger.info("I am "+mood);
-        }catch(Exception e) {
-        	e.printStackTrace();
-        }
+        MoodAnalyzer moodAnalyzerObject = new MoodAnalyzer("I am in Happy mood");
+        String mood;
+		try {
+			mood = moodAnalyzerObject.analyseMood();
+			logger.info("I am "+mood);
+		} catch (MoodAnalysisException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+        
     }
 }

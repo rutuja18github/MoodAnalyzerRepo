@@ -10,15 +10,18 @@ public class MoodAnalyzer {
 		this.message = message;
 	}
 
-	public String analyseMood() {
+	public String analyseMood() throws MoodAnalysisException {
 		try {
+			if(message.isEmpty()) {
+				throw new MoodAnalysisException(MoodAnalysisException.ExcpetionType.EMPTY_INPUT,
+						                        "Please enter proper message because message is empty");
+			}
 			if (message.equalsIgnoreCase("I am in Sad mood")) {
 				return "Sad";
-			} else {
-				return "Happy";
-			}
-		} catch (Exception ex) {
+			} 
 			return "Happy";
+		} catch (NullPointerException ex) {
+			throw new MoodAnalysisException(MoodAnalysisException.ExcpetionType.NULL_INPUT,"Please enter proper message");
 		}
 	}
 }

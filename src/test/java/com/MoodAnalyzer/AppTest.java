@@ -42,19 +42,19 @@ public class AppTest {
 			exceptionRule.expect(MoodAnalysisException.class);
 			assertEquals("Happy", userObject.analyseMood());
 		} catch (MoodAnalysisException e) {
-			assertEquals(MoodAnalysisException.ExcpetionType.NULL_INPUT, e.excpetionType);
+			assertEquals(MoodAnalysisException.ExcpetionType.NULL, e.excpetionType);
 		}
 	}
 
 	@Test
 	public void CheckMoodForEmpty() {
-		MoodAnalyzer userObject = new MoodAnalyzer(null);
+		MoodAnalyzer userObject = new MoodAnalyzer("");
 		try {
 			ExpectedException exceptionRule = ExpectedException.none();
 			exceptionRule.expect(MoodAnalysisException.class);
 			assertEquals("Happy", userObject.analyseMood());
 		} catch (MoodAnalysisException e) {
-			assertEquals(MoodAnalysisException.ExcpetionType.EMPTY_INPUT, e.excpetionType);
+			assertEquals(MoodAnalysisException.ExcpetionType.EMPTY, e.excpetionType);
 		}
 	}
 

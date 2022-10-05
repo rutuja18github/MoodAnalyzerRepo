@@ -3,7 +3,7 @@ package com.moodanalyzer;
 public class MoodAnalysisException extends Exception {
 
 	enum ExcpetionType {
-		NULL_INPUT, EMPTY_INPUT
+		NULL,EMPTY
 
 	}
 
@@ -11,5 +11,6 @@ public class MoodAnalysisException extends Exception {
 
 	public MoodAnalysisException(ExcpetionType excpetionType,String message) {
 		super(message);
+		this.excpetionType = excpetionType;
 	}
 }
